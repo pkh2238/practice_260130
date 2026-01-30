@@ -50,6 +50,7 @@ const getNumberColor = (number) => {
 };
 
 const displayLottoNumbers = () => {
+    console.log("Generating and displaying new lotto numbers...");
     const container = document.getElementById('lotto-numbers-container');
     container.innerHTML = '';
     const numbers = generateLottoNumbers();
