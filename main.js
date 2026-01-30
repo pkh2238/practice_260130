@@ -63,4 +63,23 @@ const displayLottoNumbers = () => {
 
 document.getElementById('generate-button').addEventListener('click', displayLottoNumbers);
 
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+const applyTheme = (theme) => {
+    if (theme === 'dark') {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+    }
+};
+
+themeToggle.addEventListener('click', () => {
+    const isDarkMode = body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+});
+
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
+
 displayLottoNumbers();
